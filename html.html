@@ -1,67 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Team Profiles - Techsas International</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
 
-.container {
-  padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  text-align: center;
-}
+    h2 {
+      text-align: center;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px;
+      margin: 0;
+      font-size: 28px;
+    }
 
-.profile-pic {
-  height: 100px;
-  width: 100px;
-  background-color: #555;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 24px;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-}
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-input[type="file"] {
-  display: none;
-}
+    .container {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+    .container:hover {
+      transform: translateY(-5px);
+    }
 
-textarea {
-  resize: vertical;
-}
-</style>
+    .profile-pic {
+      height: 100px;
+      width: 100px;
+      background-color: #555;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      background-color: #444;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+      border-color: #0073e6;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
 </head>
 <body>
 
-<h2 style="margin: 0;">Techsas International</h2>
+<h2>Techsas International Team Profiles</h2>
 
 <div class="grid-container">
-  <!-- 16 profile boxes -->
+  <!-- Repeatable profile containers, starts with 16 -->
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-1').click()">
       <span>+</span>
@@ -69,6 +120,7 @@ textarea {
     <input type="file" id="profile-pic-upload-1" accept="image/*" onchange="loadProfilePic(event, 1)">
     <input type="text" placeholder="Username" value="John Doe">
     <textarea placeholder="Job Description">Software Developer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -78,9 +130,10 @@ textarea {
     <input type="file" id="profile-pic-upload-2" accept="image/*" onchange="loadProfilePic(event, 2)">
     <input type="text" placeholder="Username" value="Jane Smith">
     <textarea placeholder="Job Description">Graphic Designer</textarea>
+    <button>Save Profile</button>
   </div>
 
-  <!-- Continue duplicating this block up to 16 times -->
+  <!-- Duplicate more containers up to 16 as needed, examples below -->
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-3').click()">
       <span>+</span>
@@ -88,6 +141,7 @@ textarea {
     <input type="file" id="profile-pic-upload-3" accept="image/*" onchange="loadProfilePic(event, 3)">
     <input type="text" placeholder="Username" value="Mike Ross">
     <textarea placeholder="Job Description">Lawyer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -97,191 +151,16 @@ textarea {
     <input type="file" id="profile-pic-upload-4" accept="image/*" onchange="loadProfilePic(event, 4)">
     <input type="text" placeholder="Username" value="Rachel Zane">
     <textarea placeholder="Job Description">Paralegal</textarea>
+    <button>Save Profile</button>
   </div>
-
-  <!-- Add more containers with unique IDs, up to 16 -->
-  <!-- Example continuation -->
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-5').click()">
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-5" accept="image/*" onchange="loadProfilePic(event, 5)">
-    <input type="text" placeholder="Username" value="Harvey Specter">
-    <textarea placeholder="Job Description">Senior Partner</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-6').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-6" accept="image/*" onchange="loadProfilePic(event, 6)">
-    <input type="text" placeholder="Username" value="Louis Litt">
-    <textarea placeholder="Job Description">Managing Partner</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-7').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-7" accept="image/*" onchange="loadProfilePic(event, 7)">
-    <input type="text" placeholder="Username" value="Donna Paulsen">
-    <textarea placeholder="Job Description">COO</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-8').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-8" accept="image/*" onchange="loadProfilePic(event, 8)">
-    <input type="text" placeholder="Username" value="Jessica Pearson">
-    <textarea placeholder="Job Description">Managing Partner</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-9').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-9" accept="image/*" onchange="loadProfilePic(event, 9)">
-    <input type="text" placeholder="Username" value="Samantha Wheeler">
-    <textarea placeholder="Job Description">Senior Partner</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-10').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-10" accept="image/*" onchange="loadProfilePic(event, 10)">
-    <input type="text" placeholder="Username" value="Alex Williams">
-    <textarea placeholder="Job Description">Partner</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-11').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-11" accept="image/*" onchange="loadProfilePic(event, 11)">
-    <input type="text" placeholder="Username" value="Katrina Bennett">
-    <textarea placeholder="Job Description">Associate</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-12').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-12" accept="image/*" onchange="loadProfilePic(event, 12)">
-    <input type="text" placeholder="Username" value="Gretchen Bodinski">
-    <textarea placeholder="Job Description">Secretary</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-13').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-13" accept="image/*" onchange="loadProfilePic(event, 13)">
-    <input type="text" placeholder="Username" value="Stu Buzzini">
-    <textarea placeholder="Job Description">Trader</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-14').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-14" accept="image/*" onchange="loadProfilePic(event, 14)">
-    <input type="text" placeholder="Username" value="Faye Richardson">
-    <textarea placeholder="Job Description">Special Master</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-15').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-15" accept="image/*" onchange="loadProfilePic(event, 15)">
-    <input type="text" placeholder="Username" value="Jeff Malone">
-    <textarea placeholder="Job Description">Attorney</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-16').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-16" accept="image/*" onchange="loadProfilePic(event, 16)">
-    <input type="text" placeholder="Username" value="Tara Messer">
-    <textarea placeholder="Job Description">Architect</textarea>
-  </div>
-
-</div>
-
-<script>
-function loadProfilePic(event, id) {
-  var profilePic = document.querySelectorAll('.profile-pic')[id - 1];
-  var file = event.target.files[0];
-  var reader = new FileReader();
-  
-  reader.onload = function(e) {
-    profilePic.style.backgroundImage = 'url(' + e.target.result + ')';
-    profilePic.textContent = '';
-  };
-  
-  reader.readAsDataURL(file);
-}
-</script>
-
-</body>
-</html>
-
-</head>
-<body>
-
-<h2 style="margin: 0;">Techsas International</h2>
-
-<div class="grid-container">
-  <!-- 16 profile boxes -->
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-1').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-1" accept="image/*" onchange="loadProfilePic(event, 1)">
     <input type="text" placeholder="Username" value="John Doe">
     <textarea placeholder="Job Description">Software Developer</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-2').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-2" accept="image/*" onchange="loadProfilePic(event, 2)">
-    <input type="text" placeholder="Username" value="Jane Smith">
-    <textarea placeholder="Job Description">Graphic Designer</textarea>
-  </div>
-
-  <!-- Continue duplicating this block up to 16 times -->
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-3').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-3" accept="image/*" onchange="loadProfilePic(event, 3)">
-    <input type="text" placeholder="Username" value="Mike Ross">
-    <textarea placeholder="Job Description">Lawyer</textarea>
-  </div>
-
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-4').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-4" accept="image/*" onchange="loadProfilePic(event, 4)">
-    <input type="text" placeholder="Username" value="Rachel Zane">
-    <textarea placeholder="Job Description">Paralegal</textarea>
-  </div>
-
-  <!-- Add more containers with unique IDs, up to 16 -->
-  <!-- Example continuation -->
-  <div class="container">
-    <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-5').click()">
-      <span>+</span>
-    </div>
-    <input type="file" id="profile-pic-upload-5" accept="image/*" onchange="loadProfilePic(event, 5)">
-    <input type="text" placeholder="Username" value="Harvey Specter">
-    <textarea placeholder="Job Description">Senior Partner</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -289,8 +168,9 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-6" accept="image/*" onchange="loadProfilePic(event, 6)">
-    <input type="text" placeholder="Username" value="Louis Litt">
-    <textarea placeholder="Job Description">Managing Partner</textarea>
+    <input type="text" placeholder="Username" value="Jane Smith">
+    <textarea placeholder="Job Description">Graphic Designer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -298,8 +178,9 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-7" accept="image/*" onchange="loadProfilePic(event, 7)">
-    <input type="text" placeholder="Username" value="Donna Paulsen">
-    <textarea placeholder="Job Description">COO</textarea>
+    <input type="text" placeholder="Username" value="Mike Ross">
+    <textarea placeholder="Job Description">Lawyer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -307,17 +188,18 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-8" accept="image/*" onchange="loadProfilePic(event, 8)">
-    <input type="text" placeholder="Username" value="Jessica Pearson">
-    <textarea placeholder="Job Description">Managing Partner</textarea>
+    <input type="text" placeholder="Username" value="Rachel Zane">
+    <textarea placeholder="Job Description">Paralegal</textarea>
+    <button>Save Profile</button>
   </div>
-
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-9').click()">
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-9" accept="image/*" onchange="loadProfilePic(event, 9)">
-    <input type="text" placeholder="Username" value="Samantha Wheeler">
-    <textarea placeholder="Job Description">Senior Partner</textarea>
+    <input type="text" placeholder="Username" value="John Doe">
+    <textarea placeholder="Job Description">Software Developer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -325,8 +207,9 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-10" accept="image/*" onchange="loadProfilePic(event, 10)">
-    <input type="text" placeholder="Username" value="Alex Williams">
-    <textarea placeholder="Job Description">Partner</textarea>
+    <input type="text" placeholder="Username" value="Jane Smith">
+    <textarea placeholder="Job Description">Graphic Designer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -334,8 +217,9 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-11" accept="image/*" onchange="loadProfilePic(event, 11)">
-    <input type="text" placeholder="Username" value="Katrina Bennett">
-    <textarea placeholder="Job Description">Associate</textarea>
+    <input type="text" placeholder="Username" value="Mike Ross">
+    <textarea placeholder="Job Description">Lawyer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -343,17 +227,18 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-12" accept="image/*" onchange="loadProfilePic(event, 12)">
-    <input type="text" placeholder="Username" value="Gretchen Bodinski">
-    <textarea placeholder="Job Description">Secretary</textarea>
+    <input type="text" placeholder="Username" value="Rachel Zane">
+    <textarea placeholder="Job Description">Paralegal</textarea>
+    <button>Save Profile</button>
   </div>
-
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-13').click()">
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-13" accept="image/*" onchange="loadProfilePic(event, 13)">
-    <input type="text" placeholder="Username" value="Stu Buzzini">
-    <textarea placeholder="Job Description">Trader</textarea>
+    <input type="text" placeholder="Username" value="John Doe">
+    <textarea placeholder="Job Description">Software Developer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -361,17 +246,20 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-14" accept="image/*" onchange="loadProfilePic(event, 14)">
-    <input type="text" placeholder="Username" value="Faye Richardson">
-    <textarea placeholder="Job Description">Special Master</textarea>
+    <input type="text" placeholder="Username" value="Jane Smith">
+    <textarea placeholder="Job Description">Graphic Designer</textarea>
+    <button>Save Profile</button>
   </div>
 
+  
   <div class="container">
     <div class="profile-pic" onclick="document.getElementById('profile-pic-upload-15').click()">
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-15" accept="image/*" onchange="loadProfilePic(event, 15)">
-    <input type="text" placeholder="Username" value="Jeff Malone">
-    <textarea placeholder="Job Description">Attorney</textarea>
+    <input type="text" placeholder="Username" value="Mike Ross">
+    <textarea placeholder="Job Description">Lawyer</textarea>
+    <button>Save Profile</button>
   </div>
 
   <div class="container">
@@ -379,10 +267,12 @@ function loadProfilePic(event, id) {
       <span>+</span>
     </div>
     <input type="file" id="profile-pic-upload-16" accept="image/*" onchange="loadProfilePic(event, 16)">
-    <input type="text" placeholder="Username" value="Tara Messer">
-    <textarea placeholder="Job Description">Architect</textarea>
+    <input type="text" placeholder="Username" value="Rachel Zane">
+    <textarea placeholder="Job Description">Paralegal</textarea>
+    <button>Save Profile</button>
   </div>
 
+  
 </div>
 
 <script>
@@ -390,12 +280,12 @@ function loadProfilePic(event, id) {
   var profilePic = document.querySelectorAll('.profile-pic')[id - 1];
   var file = event.target.files[0];
   var reader = new FileReader();
-  
+
   reader.onload = function(e) {
     profilePic.style.backgroundImage = 'url(' + e.target.result + ')';
     profilePic.textContent = '';
   };
-  
+
   reader.readAsDataURL(file);
 }
 </script>
